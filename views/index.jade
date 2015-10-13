@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1 Tabla de Productos
+	table.table.table-striped
+		tr
+			th Producto
+			th Descripcion
+			th Precio
+			th
+				span.glyphicon.glyphicon-globe
+			-if (produtos)
+			-each producto in productos
+				tr
+					td
+						a(href='/producto/'+ producto._id.toString()) #{producto.nombre}
+					td #{producto.descripcion}
+					td #{producto.precio}
+					td
+						a(href="/delete-producto/" + producto._id.toString()).btn.btn-primary.btn-sm Borrar
+
+	p
+		a(href='/nuevo-producto') Nuevo Producto
+	p
+		a(href='/buscar')
+			button.btn.btn-info Buscar

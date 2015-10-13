@@ -1,0 +1,26 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h2 #{title}
+		form(method='post')
+
+			p
+				label(for='nombre') Nombre:
+				input(type='text', name='nombre', value=producto.nombre).form-control
+
+			p
+				label(for='descripcion') Descripcion:
+				input(type='text', name='descripcion', size=50, value=producto.descripcion).form-control
+
+			p
+				label(for='precio') Precio
+				input(type='text', name='precio', value=producto.precio).form-control
+
+			p
+				input(type='submit', value='Guardar').btn.btn-success
+				a(href="/")
+					input(type='button', value='Cancelar Acción').btn.btn-danger

@@ -1,0 +1,13 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h2	Buscar
+		p
+			form(id="form_buscar", method="post", action="/buscar")
+				label(for='parametro')
+				input(type='text', name='parametro', id="parametro").form-control
+				input(type='submit', value='Buscar').btn.btn-primary
